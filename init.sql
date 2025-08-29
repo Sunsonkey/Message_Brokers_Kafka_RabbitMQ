@@ -1,0 +1,1 @@
+CREATE DATABASE credit_app_db;

@@ -1,0 +1,38 @@
+### Создать заявку на кредит
+POST http://localhost:8080/api/credit/apply
+Content-Type: application/json
+
+{
+  "amount": 1000000,
+  "termMonths": 36,
+  "income": 150000,
+  "currentDebt": 200000,
+  "creditRating": 750
+}
+
+### Получить статус заявки
+GET http://localhost:8080/api/credit/status/1
+
+### Создать заявку с высоким долгом (должна быть отклонена)
+POST http://localhost:8080/api/credit/apply
+Content-Type: application/json
+
+{
+  "amount": 1000000,
+  "termMonths": 12,
+  "income": 100000,
+  "currentDebt": 800000,
+  "creditRating": 650
+}
+
+### Создать заявку с плохим кредитным рейтингом (должна быть отклонена)
+POST http://localhost:8080/api/credit/apply
+Content-Type: application/json
+
+{
+  "amount": 500000,
+  "termMonths": 24,
+  "income": 200000,
+  "currentDebt": 100000,
+  "creditRating": 550
+}

@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - createTable:
+            tableName: credit_application
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: amount
+                  type: DECIMAL
+              - column:
+                  name: term_months
+                  type: INT
+              - column:
+                  name: income
+                  type: DECIMAL
+              - column:
+                  name: current_debt
+                  type: DECIMAL
+              - column:
+                  name: rating
+                  type: VARCHAR(10)
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  defaultValue: "processing"
